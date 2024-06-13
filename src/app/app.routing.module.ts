@@ -1,11 +1,10 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
-export const routes: Routes = [
-  // { path: '', component: AppComponent},
+const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingPageComponent },
   { path: 'search', component: RecipeSearchComponent },
@@ -13,3 +12,8 @@ export const routes: Routes = [
   { path: '**', redirectTo: '/home' }  // Optional: Redirects any unknown paths to home
 ];
 
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
