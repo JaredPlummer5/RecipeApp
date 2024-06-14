@@ -29,7 +29,7 @@
           <img [src]="recipe.image" alt="{{ recipe.title }}" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">{{ recipe.title }}</h5>
-            <p class="card-text" [innerHTML]="sanitizeHtml(recipe.summary)"></p>
+        
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
               See Details
             </button>
